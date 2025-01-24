@@ -1,3 +1,16 @@
+Version 2.0.0
+-------------
+    * `puku sync` now adds transitive dependencies to the BUILD file
+
+      This requires that `go` is installed on your system, and that the Modfile target in your
+      `.plzconfig` is a simple filegroup/export_file target defined in the same directory that the
+      `go.mod` and `go.sum` files are in.
+      
+      By default, `puku sync` will not update the version on transitive dependencies which are not
+      listed in the `go.mod` file as a requirement or replacement. The `-t` or `--update_transitive`
+      flag may be passed to enable updating these modules according to Go's Minimal Version
+      Selection algorithm.
+
 Version 1.14.0
 --------------
     * Add support for targets which provide multiple Go targets

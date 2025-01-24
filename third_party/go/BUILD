@@ -323,3 +323,107 @@ go_repo(
     module = "k8s.io/klog/v2",
     version = "v2.120.1",
 )
+
+go_repo(
+    licences = ["BSD-3-Clause"],
+    module = "github.com/google/uuid",
+    version = "v1.1.2",
+)
+
+go_repo(
+    licences = ["Apache-2.0"],
+    module = "google.golang.org/appengine",
+    version = "v1.4.0",
+)
+
+go_repo(
+    licences = ["Apache-2.0"],
+    module = "github.com/cncf/udpa/go",
+    version = "v0.0.0-20191209042840-269d4d468f6f",
+)
+
+go_repo(
+    licences = ["MIT"],
+    module = "github.com/kr/pty",
+    version = "v1.1.1",
+)
+
+go_repo(
+    licences = ["Apache-2.0"],
+    module = "github.com/google/martian/v3",
+    version = "v3.3.2",
+)
+
+go_repo(
+    licences = ["MIT"],
+    module = "github.com/kr/text",
+    version = "v0.1.0",
+)
+
+go_repo(
+    licences = [
+        "Apache-2.0",
+        "MIT",
+    ],
+    module = "gopkg.in/yaml.v2",
+    version = "v2.4.0",
+)
+
+go_repo(
+    module = "github.com/BurntSushi/toml",
+    version = "v0.3.1",
+)
+
+go_repo(
+    licences = ["Apache-2.0"],
+    module = "github.com/google/go-replayers/httpreplay",
+    version = "v1.2.0",
+)
+
+go_repo(
+    licences = ["MIT"],
+    module = "github.com/otiai10/copy",
+    version = "v1.10.0",
+)
+
+go_repo(
+    licences = ["Apache-2.0"],
+    module = "github.com/spf13/cobra",
+    version = "v1.7.0",
+)
+
+go_repo(
+    licences = ["Apache-2.0"],
+    module = "cloud.google.com/go",
+    version = "v0.26.0",
+)
+
+go_repo(
+    licences = ["MIT"],
+    module = "github.com/kr/pretty",
+    version = "v0.1.0",
+)
+
+go_repo(
+    licences = ["BSD-3-Clause"],
+    module = "github.com/spf13/pflag",
+    version = "v1.0.5",
+)
+
+go_repo(
+    licences = ["Apache-2.0"],
+    module = "github.com/inconshreveable/mousetrap",
+    version = "v1.1.0",
+)
+
+go_repo(
+    licences = ["MIT"],
+    module = "github.com/client9/misspell",
+    version = "v0.3.4",
+)
+
+go_repo(
+    licences = ["BSD-3-Clause"],
+    module = "golang.org/x/exp",
+    version = "v0.0.0-20190121172915-509febef88a4",
+)

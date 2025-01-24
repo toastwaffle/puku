@@ -36,8 +36,9 @@ var opts = struct {
 		} `positional-args:"true"`
 	} `command:"fmt" description:"Format build files in the provided paths"`
 	Sync struct {
-		Format string `short:"f" long:"format" choice:"json" choice:"text" default:"text" description:"output format when outputting to stdout"` //nolint
-		Write  bool   `short:"w" long:"write" description:"Whether to write the files back or just print them to stdout"`
+		Format           string `short:"f" long:"format" choice:"json" choice:"text" default:"text" description:"output format when outputting to stdout"` //nolint
+		Write            bool   `short:"w" long:"write" description:"Whether to write the files back or just print them to stdout"`
+		UpdateTransitive bool   `short:"t" long:"update_transitive" description:"Whether to allow updating transitive dependencies which are not listed in the go.mod file"` //nolint
 	} `command:"sync" description:"Synchronises the go.mod to the third party build file"`
 	Lint struct {
 		Format string `short:"f" long:"format" choice:"json" choice:"text" default:"text" description:"output format when outputting to stdout"` //nolint
@@ -87,11 +88,11 @@ var funcs = map[string]func(conf *config.Config, plzConf *please.Config, orignal
 	"sync": func(_ *config.Config, plzConf *please.Config, _ string) int {
 		g := graph.New(plzConf.BuildFileNames(), opts.Options)
 		if opts.Sync.Write {
-			if err := sync.Sync(plzConf, g); err != nil {
+			if err := sync.Sync(plzConf, g, opts.Sync.UpdateTransitive); err != nil {
 				log.Fatalf("%v", err)
 			}
 		} else {
-			if err := sync.SyncToStdout(opts.Sync.Format, plzConf, g); err != nil {
+			if err := sync.SyncToStdout(opts.Sync.Format, plzConf, g, opts.Sync.UpdateTransitive); err != nil {
 				log.Fatalf("%v", err)
 			}
 		}

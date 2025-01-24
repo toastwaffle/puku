@@ -1,10 +1,6 @@
 go_library(
     name = "please",
-    srcs = [
-        "build.go",
-        "please.go",
-        "query_config.go",
-    ],
+    srcs = glob(["*.go"]),
     visibility = [
         "//:all",
         "//cmd/puku:all",
